@@ -5,6 +5,8 @@ WORKDIR /code
 COPY ./requirements.txt /code/requirements.txt
 RUN python3 -m pip install --no-cache-dir --upgrade pip
 RUN python3 -m pip install --no-cache-dir --upgrade -r /code/requirements.txt
+RUN python3 -m pip install -q -U google-generativeai
+RUN python3 -m pip install --upgrade --quiet langchain-google-genai
 
 COPY . .
 
